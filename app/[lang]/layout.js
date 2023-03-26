@@ -1,7 +1,7 @@
 import '../globals.css'
 
 export async function generateStaticParams() {
-  return [{ lang: 'hu' }, { lang: 'en' }];
+  return {params: [{ lang: 'hu' }, { lang: 'en' }], fallback: false};
 }
 
 export const metadata = {
