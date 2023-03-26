@@ -1,7 +1,9 @@
 import '../globals.css'
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
-  return {params: [{ lang: 'hu' }, { lang: 'en' }], fallback: false};
+  return [{ lang: 'hu' }, { lang: 'en' }];
 }
 
 export const metadata = {
