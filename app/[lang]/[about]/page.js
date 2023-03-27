@@ -3,7 +3,7 @@ import { dictionary } from '../../../dictionary'
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  return [{ about: 'about' }, { about: 'rolam' }];
+  return [{ lang: 'en', about: 'about' }, { lang: 'hu', about: 'rolam' }];
 }
 
 export const metadata = {
