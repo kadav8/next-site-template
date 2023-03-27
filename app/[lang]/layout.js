@@ -1,4 +1,5 @@
 import '../globals.css'
+import LanguageSelector from './language-selector';
 
 export const dynamicParams = false;
 
@@ -14,7 +15,10 @@ export const metadata = {
 export default function Root({ children, params }) {
   return (
     <html lang={params.lang}>
-      <body>{children}</body>
+      <body>
+        <div><LanguageSelector lang={params.lang}></LanguageSelector></div>
+        <main>{children}</main>
+      </body>
     </html>
   );
 }

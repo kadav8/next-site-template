@@ -1,3 +1,10 @@
 {
-   "hello-message": "Szia látogató!"
+   "hello-message": "Szia látogató!",
+   "navigation": {
+      "about_title": "Rólam",
+      "about_url": "rolam"
+   },
+   "about-page" : {
+      "title": "Rólam" 
+   }
 }

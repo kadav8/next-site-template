@@ -1,3 +1,10 @@
 {
-   "hello-message": "Hi visitor!"
+   "hello-message": "Hi visitor!",
+   "navigation": {
+      "about_title": "About",
+      "about_url": "about"
+   },
+   "about-page" : {
+      "title": "About" 
+   }
 }
