@@ -1,5 +1,5 @@
 import '../globals.css'
-import LanguageSelector from './language-selector';
+import Menubar from './menubar';
 
 export const dynamicParams = false;
 
@@ -16,7 +16,7 @@ export default function Root({ children, params }) {
   return (
     <html lang={params.lang}>
       <body>
-        <div><LanguageSelector lang={params.lang}></LanguageSelector></div>
+        <Menubar lang={params.lang} />
         <main>{children}</main>
       </body>
     </html>

@@ -1,6 +1,7 @@
 {
    "hello-message": "Hi visitor!",
    "navigation": {
+      "home_title": "Home",
       "about_title": "About",
       "about_url": "about"
    },

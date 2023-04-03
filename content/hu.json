@@ -1,6 +1,7 @@
 {
    "hello-message": "Szia látogató!",
    "navigation": {
+      "home_title": "Főoldal",
       "about_title": "Rólam",
       "about_url": "rolam"
    },
