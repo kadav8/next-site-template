@@ -5,10 +5,10 @@ export const metadata = {
   title: 'Site Template - Blog'
 }
 
-export default async function AboutPage({ params }) {  
+export default async function BlogPage({ params }) {  
   return (
     <div className="flex justify-center">
-      <div className="flex flex-col w-[52rem] pt-24 text-gray-600">
+      <div className="flex flex-col w-4/5 lg:w-[52rem] pt-24 text-gray-600">
         <h1 className="text-3xl font-serif mb-12">Blog</h1>
         {allPosts
           .filter(a => a.lang === params.lang)

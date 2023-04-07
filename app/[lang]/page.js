@@ -9,7 +9,7 @@ export default async function Page({ params: { lang } }) {
         <span className="pt-24 pb-8 text-5xl font-extrabold uppercase">
           {t['hello-message']}
         </span>
-        <span className="w-[40rem] text-center text-lg tracking-wider leading-8">
+        <span className="w-4/5 lg:w-[40rem] text-center text-lg tracking-wider leading-8">
           Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin odio nec consequat feugiat. 
           Maecenas pulvinar porttitor mauris ut sollicitudin. Etiam sit amet mi sed quam sagittis eleifend.
         </span>
@@ -19,20 +19,20 @@ export default async function Page({ params: { lang } }) {
         </div>
       </div>
 
-      <div className="flex flex-col h-[32rem] p-32">
-        <span className="w-96 font-semibold text-2xl">
+      <div className="flex flex-col h-[32rem] p-16 md:p-32">
+        <span className="w-4/5 lg:w-96 font-semibold text-2xl">
           Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </span>
       </div>
 
-      <div className="flex flex-col h-[32rem] p-32 bg-stone-50">
-        <span className="w-96 font-semibold text-2xl">
+      <div className="flex flex-col h-[32rem] p-16 md:p-32 bg-stone-50">
+        <span className="w-4/5 lg:w-96 font-semibold text-2xl">
           Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </span>
       </div>
 
-      <div className="flex flex-col h-[32rem] p-32">
-        <span className="w-96 font-semibold text-2xl">
+      <div className="flex flex-col h-[32rem] p-16 md:p-32">
+        <span className="w-4/5 lg:w-96 font-semibold text-2xl">
           Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </span>
       </div>

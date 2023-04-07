@@ -10,7 +10,7 @@ export default async function Menubar(props) {
          <div className="w-20 text-start py-4 font-extrabold">
             Template
          </div>
-         <div className="flex px-72">
+         <div className="hidden md:flex md:px-32 lg:px-72">
             <MenuLink href={`/${props.lang}`} name={t['navigation'].home_title}/>
             <MenuLink href={`/${props.lang}/${t['navigation'].about_url}`} name={t['navigation'].about_title}/>
             <MenuLink href={`/${props.lang}/${t['navigation'].blog_url}`} name={t['navigation'].blog_title}/>
