@@ -1,5 +1,7 @@
 {
-   "hello-message": "Szia látogató!",
+   "hello-message": "Szia látogató",
+   "button1": "Kattints ide",
+   "button2": "Ide is lehet kattintani",
    "navigation": {
       "home_title": "Főoldal",
       "about_title": "Rólam",

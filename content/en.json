@@ -1,5 +1,7 @@
 {
-   "hello-message": "Hi visitor!",
+   "hello-message": "Hi visitor",
+   "button1": "Click here",
+   "button2": "You can also click here",
    "navigation": {
       "home_title": "Home",
       "about_title": "About",
