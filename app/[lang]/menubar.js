@@ -13,9 +13,7 @@ export default async function Menubar(props) {
          <div className="flex px-72">
             <MenuLink href={`/${props.lang}`} name={t['navigation'].home_title}/>
             <MenuLink href={`/${props.lang}/${t['navigation'].about_url}`} name={t['navigation'].about_title}/>
-            <MenuLink href={`/${props.lang}/${t['navigation'].about_url}`} name={t['navigation'].about_title}/>
-            <MenuLink href={`/${props.lang}/${t['navigation'].about_url}`} name={t['navigation'].about_title}/>
-            <MenuLink href={`/${props.lang}/${t['navigation'].about_url}`} name={t['navigation'].about_title}/>
+            <MenuLink href={`/${props.lang}/${t['navigation'].blog_url}`} name={t['navigation'].blog_title}/>
          </div>
          <div className="w-20 text-end py-4">
             <span className="border border-white rounded-lg py-1 px-3 text-xs"><LanguageSelector/></span>

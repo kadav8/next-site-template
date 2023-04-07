@@ -5,9 +5,14 @@
    "navigation": {
       "home_title": "Home",
       "about_title": "About",
-      "about_url": "about"
+      "about_url": "about",
+      "blog_title": "Blog",
+      "blog_url": "blog"
    },
    "about-page" : {
       "title": "About" 
+   },
+   "blog-page" : {
+      "title": "Blog" 
    }
 }

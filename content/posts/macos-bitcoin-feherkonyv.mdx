@@ -1,0 +1,27 @@
+---
+title: Az Apple 2018 óta a macOS minden verziójába beépítette a Bitcoin Whitepapert
+date: 2022-03-11
+lang: hu
+---
+
+Az Apple a macOS minden 2018 óta szállított példányába beletette Satoshi Nakamoto eredeti Bitcoin fehér könyvét, és úgy tűnik, senki sem tudja, miért.
+
+A zavarba ejtő felfedezést (vagy újrafelfedezést - lásd alább) nemrég Andy Baio fejlesztő és waxy.org-író tette, aki akkor bukkant rá a PDF-dokumentumra, amikor megpróbált megoldani egy problémát a nyomtatójával.
+
+Bárki, akinek macOS Mojave vagy újabb macOS-t futtató Mac-je van, megnézheti a PDF-et a saját szemével, ha beírja a következő parancsot a Terminalba:
+
+open /System/Library/Image\ Capture/Devices/VirtualScanner.app/Contents/Resources/simpledoc.pdf
+
+Ha a macOS 10.14 vagy újabb verziót futtat, a 184 KB-os Bitcoin PDF azonnal meg fog nyílni az előnézetben.
+
+A dokumentum a Finder segítségével is megtalálható: Navigáljon a Macintosh HD -> Rendszer -> Könyvtár -> Képfelvétel -> Eszközök, majd nyissa meg a Tartalom -> Források mappát. A "simpledoc.pdf" című dokumentumnak ott kell lennie.
+
+Baio úgy találta, hogy a macOS Image Capture segédprogramban a Bitcoin whitepaper egy "Virtual Scanner II" nevű eszköz mintadokumentumaként szolgál, amely vagy működteti, vagy nem az Apple Import from iPhone funkcióját, és alapértelmezés szerint vagy el van rejtve, vagy nincs mindenki számára telepítve.
+
+Baio később felfedezte, hogy nem ő volt az első, aki megtalálta a Bitcoin-dokumentumot vagy a "Virtual Scanner II"-t. Egy 2021-es Apple Community bejegyzés a macOS-ben való létezését firtatja, ráadásul a San Franciscó-i öbölben, a Treasure Islanden készült feliratról készült fotó is, miután Joshua Dickens dizájner 2020-ban kiásta őket.
+
+Nem tudni, hogy az Apple miért választotta mintadokumentumnak Nakamoto Bitcoin fehér könyvét. A feltételezett álnevű Bitcoin-fejlesztő személyazonosságával kapcsolatban széles körű találgatások indultak, ami valószínűleg csak tovább növeli az intrikát. Az is tisztázatlan marad, hogy mire utal a "Virtual Scanner II".
+
+Egy Baióval beszélgető forrás szerint valaki közel egy évvel ezelőtt problémaként iktatta a Bitcoin-papírt az Apple-nél, és ugyanannak a mérnöknek rendelte ki, aki a PDF-et először is odatette, de ez a személy azóta sem intézkedett, sem nem nyilatkozott a kérdésről.
+
+A rejtély folytatódik.
