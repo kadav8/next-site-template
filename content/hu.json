@@ -7,12 +7,21 @@
       "about_title": "Rólam",
       "about_url": "rolam",
       "blog_title": "Blog",
-      "blog_url": "blog"
+      "blog_url": "blog",
+      "store_title": "Bolt",
+      "store_url": "bolt"
    },
    "about-page" : {
-      "title": "Rólam" 
+      "title": "Rólam",
+      "subtitle": "Race with Mario and friends anytime, anywhere!",
+      "content1": "Mario Kart 8 is a 2014 kart racing game developed and published by Nintendo for the Wii U. It retains the gameplay of previous games in the Mario Kart series, with players controlling a Mario franchise character in races around tracks. Tracks are themed around locales from the Super Mario platform series and are populated with power-ups that help players gain advantages in races. Different difficulties are selectable prior to a race; harder difficulties make gameplay faster. In the new anti-gravity sequences, players drive on walls and ceilings. Mario Kart 8 contains a variety of single-player and local and online multiplayer games modes, including Grand Prix racing and arena-based battle modes.",
+      "content2": "Mario Kart 8 was a critical success; reviewers praised its gameplay and presentation, but the battle mode received mixed reviews. Critics praised Deluxe as definitive version of Mario Kart 8 for its improved battle modes and presentation. Both releases have been named by critics as among the best Mario Kart games, and have won and been nominated for several awards. Mario Kart 8 is the one of the best-selling video games of all time, at over 60.46 million sold. It is also the best-selling Wii U game at 8.46 million sold and the best-selling Nintendo Switch game at 52 million.",
+      "content3": "The signature new feature of Mario Kart 8 is anti-gravity racing, in which certain parts of a course allow racers to drive on walls and ceilings. In these sections, players who collide with other racers or special bumpers will trigger a speed boost. New characters include the Koopalings and Pink Gold Peach. In addition to karts and motorbikes, the game also includes all-terrain vehicles. There are four new items: the Boomerang Flower, which can be thrown to attack players; the Piranha Plant, which attacks nearby racers and obstacles and provides a speed boost; the Crazy Eight, which gives the user eight different items; and the Super Horn, which can be used both to attack nearby opponents and defend against items, including the previously nearly unavoidable Spiny Shell. The game features 32 courses spread across eight cups, with an additional 16 courses later released as downloadable content (DLC) in four additional cups"
    },
    "blog-page" : {
       "title": "Blog" 
+   },
+   "store-page" : {
+      "title": "Bolt" 
    }
 }

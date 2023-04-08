@@ -5,7 +5,7 @@ export default async function Page({ params: { lang } }) {
   
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col h-[36rem] text-white items-center bg-indigo-600 bg-cover	bg-[url('/front.svg')]">
+      <div className="flex flex-col h-[34rem] text-white items-center bg-indigo-600 bg-cover	bg-[url('/front.svg')]">
         <span className="pt-24 pb-8 text-5xl font-extrabold uppercase">
           {t['hello-message']}
         </span>
@@ -13,9 +13,9 @@ export default async function Page({ params: { lang } }) {
           Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin odio nec consequat feugiat. 
           Maecenas pulvinar porttitor mauris ut sollicitudin. Etiam sit amet mi sed quam sagittis eleifend.
         </span>
-        <div className="pt-12">
-          <button className="mx-4 py-3 px-5 rounded-full bg-white text-black hover:shadow-2xl hover:scale-[1.01]">{t['button1']}</button>
-          <button className="mx-4 py-3 px-5 rounded-full bg-black text-white hover:shadow-2xl hover:scale-[1.01]">{t['button2']}</button>
+        <div className="pt-16">
+          <button className="mx-3 py-3 px-5 rounded-full bg-white text-black hover:shadow-2xl hover:scale-[1.01]">{t['button1']}</button>
+          <button className="mx-3 py-3 px-5 rounded-full bg-black text-white hover:shadow-2xl hover:scale-[1.01]">{t['button2']}</button>
         </div>
       </div>
 
