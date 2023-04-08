@@ -29,13 +29,13 @@ export default async function AboutContent(params) {
         <div className="text-md font-light mt-2 lg:mt-8">
           {t['about-page'].content2}
         </div>
-        <div className="flex justify-center my-12 opacity-95">
+        <div className="flex justify-center my-24 opacity-95">
           <Image
             src="/mario2.png"
             alt="Mario2"
             width={600}
             height={600}
-            className="rounded-lg"
+            className="rotate-6 rounded-lg"
           />
         </div>
         <div className="text-md font-light">
