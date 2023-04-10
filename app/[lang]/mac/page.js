@@ -72,9 +72,9 @@ function TickSvg(props) {
     <div className="flex items-center">
       <div className="w-[32px] h-[32px] sm:w-[64px] sm:h-[64px] lg:w-[76px] lg:h-[76px]">
         <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0" />
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.24000000000000005" />
-          <g id="SVGRepo_iconCarrier"><path d="M4.89163 13.2687L9.16582 17.5427L18.7085 8" stroke="#a2e22c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></g>
+          <g id="SVGRepo_bgCarrier" strokeWidth="0" />
+          <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#CCCCCC" strokeWidth="0.24000000000000005" />
+          <g id="SVGRepo_iconCarrier"><path d="M4.89163 13.2687L9.16582 17.5427L18.7085 8" stroke="#a2e22c" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" /></g>
         </svg>
       </div>
       <span>{props.text}</span>

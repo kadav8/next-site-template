@@ -16,7 +16,7 @@ export default function Root({ children, params }) {
   return (
     <html lang={params.lang}>
       <body>
-        <Menubar lang={params.lang} />
+        <Menubar lang={params.lang} segment={children.props.childProp.segment} />
         <main>{children}</main>
       </body>
     </html>
