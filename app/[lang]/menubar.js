@@ -13,6 +13,7 @@ export default async function Menubar(props) {
          <div className="hidden md:flex md:px-32">
             <MenuLink href={`/${props.lang}`} name={t['navigation'].home_title}/>
             <MenuLink href={`/${props.lang}/${t['navigation'].about_url}`} name={t['navigation'].about_title}/>
+            <MenuLink href={`/${props.lang}/${t['navigation'].mac_url}`} name={t['navigation'].mac_title}/>
             <MenuLink href={`/${props.lang}/${t['navigation'].blog_url}`} name={t['navigation'].blog_title}/>
             <MenuLink href={`/${props.lang}/${t['navigation'].store_url}`} name={t['navigation'].store_title}/>
          </div>

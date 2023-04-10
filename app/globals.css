@@ -6,8 +6,13 @@ body {
    padding: 0;
    margin: 0;
    border: 0;
+   font-family: "SSone", Helvetica Neue, Arial;
 }
 
 .blog-post p {
    @apply mb-4;
+ }
+
+ .font-relo {
+   font-family: Recoleta,sans-serif
  }
