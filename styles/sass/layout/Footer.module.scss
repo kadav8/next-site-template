@@ -1,0 +1,13 @@
+@use '../abstracts/colors';
+
+.footer {
+	display: flex;
+	justify-content: center;
+	background-color: colors.$color-grey-dark;
+	color: colors.$color-white;
+	padding: 8rem 0;
+
+	&Contact {
+		color: colors.$color-white;
+	}
+}

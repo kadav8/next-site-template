@@ -1,5 +1,5 @@
-import '../globals.css'
-import Menubar from './menubar';
+import '../../styles/globals.css'
+import Header from './header';
 import Footer from './footer';
 
 export const dynamicParams = false;
@@ -17,7 +17,7 @@ export default function Root({ children, params }) {
   return (
     <html lang={params.lang}>
       <body className='flex flex-col min-h-screen'>
-        <Menubar lang={params.lang} segment={children.props.childProp.segment} />
+        <Header lang={params.lang} segment={children.props.childProp.segment} />
         <main className='grow'>{children}</main>
         <Footer lang={params.lang} />
       </body>

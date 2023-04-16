@@ -1,0 +1,18 @@
+@use '../base/animations';
+
+.content{
+	flex: 1 0 auto;
+}
+
+.centerText {
+	text-align: center;
+}
+.marginBottomBig {
+	margin-bottom: 8rem;
+}
+.marginBottomMedium {
+	margin-bottom: 4rem;
+}
+.marginBottomSmall {
+	margin-bottom: 1.5rem;
+}

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { dictionary } from '../../dictionary'
-import { MenuLink } from './menubar';
+import { MenuLink } from './nav';
 export default async function Footer(props) {
 
     const t = await dictionary(props.lang)
