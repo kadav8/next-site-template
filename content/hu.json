@@ -1,27 +1,32 @@
 {
-   "hello-message": "Szia látogató",
-   "button1": "Kattints ide",
-   "button2": "Ide is lehet kattintani",
-   "navigation": {
-      "home_title": "Főoldal",
-      "about_title": "Rólunk",
-      "about_url": "rolam",
-      "mac_title": "Mac",
-      "mac_url": "mac",
-      "blog_title": "Blog",
-      "blog_url": "blog",
-      "store_title": "Bolt",
-      "store_url": "bolt"
-   },
-   "about-page" : {
-      "title1": "Gyors oldalakat",
-      "title2": " & appokat építünk.",
-      "content1": "Maximalizálja üzleti potenciálját a legújabb, innovatív technológiákkal épített, hatékony weboldalakkal."
-   },
-   "blog-page" : {
-      "title": "Blog" 
-   },
-   "store-page" : {
-      "title": "Bolt" 
-   }
+	"hello-message": "Szia látogató",
+	"button1": "Kattints ide",
+	"button2": "Ide is lehet kattintani",
+	"navigation": {
+		"home_title": "Főoldal",
+		"about_title": "Rólunk",
+		"about_url": "rolam",
+		"mac_title": "Mac",
+		"mac_url": "mac",
+		"blog_title": "Blog",
+		"blog_url": "blog",
+		"store_title": "Bolt",
+		"store_url": "bolt"
+	},
+	"about-page": {
+		"title1": "Gyors oldalakat",
+		"title2": " & appokat építünk.",
+		"content1": "Maximalizálja üzleti potenciálját a legújabb, innovatív technológiákkal épített, hatékony weboldalakkal."
+	},
+	"blog-page": {
+		"title": "Blog"
+	},
+	"store-page": {
+		"title": "Bolt"
+	},
+	"footer": {
+		"home_title": "Főoldal",
+		"contact_title": "Kapcsolat",
+		"contact_url": "kapcsolat"
+	}
 }

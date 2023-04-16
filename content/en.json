@@ -1,27 +1,32 @@
 {
-   "hello-message": "Hi visitor",
-   "button1": "Click here",
-   "button2": "You can also click here",
-   "navigation": {
-      "home_title": "Home",
-      "about_title": "About",
-      "about_url": "about",
-      "mac_title": "Mac",
-      "mac_url": "mac",
-      "blog_title": "Blog",
-      "blog_url": "blog",
-      "store_title": "Store",
-      "store_url": "store"
-   },
-   "about-page" : {
-      "title1": "We build",
-      "title2": "fast sites & apps.",
-      "content1": "Maximize your business potential with performant websites built with the latest, innovative technologies."
-   },
-   "blog-page" : {
-      "title": "Blog" 
-   },
-   "store-page" : {
-      "title": "Store" 
-   }
+	"hello-message": "Hi visitor",
+	"button1": "Click here",
+	"button2": "You can also click here",
+	"navigation": {
+		"home_title": "Home",
+		"about_title": "About",
+		"about_url": "about",
+		"mac_title": "Mac",
+		"mac_url": "mac",
+		"blog_title": "Blog",
+		"blog_url": "blog",
+		"store_title": "Store",
+		"store_url": "store"
+	},
+	"about-page": {
+		"title1": "We build",
+		"title2": "fast sites & apps.",
+		"content1": "Maximize your business potential with performant websites built with the latest, innovative technologies."
+	},
+	"blog-page": {
+		"title": "Blog"
+	},
+	"store-page": {
+		"title": "Store"
+	},
+	"footer": {
+		"home_title": "Home",
+		"contact_title": "Contact",
+		"contact_url": "contact"
+	}
 }
