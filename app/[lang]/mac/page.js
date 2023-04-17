@@ -9,9 +9,9 @@ export default async function MacPage() {
   return (
     <div className="flex flex-col items-center bg-stone-100">
         <div className="flex flex-col text-[3rem] sm:text-[4.5rem] lg:text-[6rem] font-semibold leading-none my-44">
-          <TickSvg text="Easy"></TickSvg>
-          <TickSvg text="Powerful"></TickSvg>
-          <TickSvg text="Amazing"></TickSvg>
+          <TickSvg text="Easy" />
+          <TickSvg text="Powerful" />
+          <TickSvg text="Amazing" />
           <span className="ml-[32px] sm:ml-[64px] lg:ml-[72px]">
             Mac does <span className="bg-lime-400 px-2 sm:px-5 sm:-mx-2 lg:-mx-5">that.</span>
           </span>

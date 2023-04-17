@@ -14,7 +14,7 @@ export default async function Page({ params: { lang } }) {
           Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin odio nec consequat feugiat. 
           Maecenas pulvinar porttitor mauris ut sollicitudin. Etiam sit amet mi sed quam sagittis eleifend.
         </span>
-        <div className="pt-16">
+        <div className="pt-24">
           <button className="mx-3 py-3 px-5 rounded-full bg-white text-black hover:shadow-2xl hover:scale-[1.01]">{t['button1']}</button>
           <button className="mx-3 py-3 px-5 rounded-full bg-black text-white hover:shadow-2xl hover:scale-[1.01]">{t['button2']}</button>
         </div>
@@ -22,7 +22,7 @@ export default async function Page({ params: { lang } }) {
 
       <div className="flex flex-row items-center bing-bg rounded-2xl mt-24">
         <div className="flex justify-center items-center w-[10rem] xl:w-[16rem]">
-          <div className="relative w-[8rem] h-[8rem]"><Image src="/bing.png" alt="Bing" fill/></div>
+          <div className="relative w-[8rem] h-[8rem] z-10"><Image src="/bing.png" alt="Bing" fill/></div>
         </div>
         <div className="flex flex-col pl-6 pr-8 py-20 w-[22rem] lg:w-[32rem] xl:w-[40rem]">
           <span className="text-2xl xl:text-4xl mb-8">Bemutatjuk az új Binget. Az AI-alapú másodpilóta a weben.</span>
