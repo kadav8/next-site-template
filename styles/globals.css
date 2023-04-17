@@ -27,5 +27,5 @@ body {
 }
 
 .fadeInUp {position:relative;animation:animateFadeInUp 1s linear} @keyframes animateFadeInUp{0%{bottom:-50px;opacity:0} 50%{opacity:0} 100%{bottom:0px}}
-.delayedFadeInUp {position:relative;animation:animateFadeInUp 1s linear} @keyframes delayedFadeInUp{0%{opacity:0} 25%{opacity:0} 50%{opacity:0} 75%{opacity:0} 100%{opacity:1}}
+.delayedFadeInUp {position:relative;animation:delayedFadeInUp 1s linear} @keyframes delayedFadeInUp{0%{opacity:0} 25%{opacity:0} 50%{opacity:0;transform:translate3d(0,3%,0)} 100%{opacity:1;transform:translate3d(0,0,0)}}
 .fadeInUp2 {position:relative;animation:animateFadeInUp2 0.75s linear} @keyframes animateFadeInUp2{from{opacity:0;transform:translate3d(0,3%,0)} to{opacity:1;transform:translate3d(0,0,0)}}
