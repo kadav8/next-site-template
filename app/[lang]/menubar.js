@@ -5,10 +5,13 @@ import { useEffect, useState } from 'react';
 import { usePathname } from "next/navigation";
 import LanguageSelector from "./language-selector";
 import MobileMenu from "./mobile-menu"
+import useWindowSize from '../../utils/windowSize'
+import '../../styles/css/header.css'
 
 export default function Menubar(props) {
   const pathname = usePathname();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const size = useWindowSize();
 
   let bgColor = "text-gray-200 bg-gray-800";
   if (pathname === `/${props.lang}`) bgColor = "text-indigo-200 bg-indigo-600";
@@ -17,36 +20,49 @@ export default function Menubar(props) {
     setShowMobileMenu(false);
   }, [pathname]);
 
-  const handleBurgerClick = () => {
-    setShowMobileMenu(!showMobileMenu);
-  }
+  useEffect(() => {
+    /* if (showMobileMenu) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'visible'; */
+  }, [showMobileMenu]);
+
 
   return (
-    <header className={`flex text-xs items-center justify-center ${bgColor}`}>
-      <div className="flex flex-row w-full ml-6 md:ml-0 md:w-20 text-start text-white py-3 font-extrabold">
-        Temply
-      </div>
+    <>
+      <header className={`flex text-xs items-center justify-center ${bgColor}`}>
+        <div className="flex flex-row w-full ml-6 md:ml-0 md:w-20 text-start text-white py-3 font-extrabold">
+          Temply
+        </div>
+        {size.width >= 1200 &&
+          <nav className="flex px-32">
+            <Navigation lang={props.lang} navigation={props.navigation} />
+          </nav>
 
-      <nav className="hidden md:flex px-32">
-        <Navigation lang={props.lang} navigation={props.navigation}/>
-      </nav>
+        }
 
-      <div className="hidden md:flex flex-row justify-end w-20 py-3">
-        <span className="border border-white text-white rounded-lg py-1 px-3">
-          <LanguageSelector />
-        </span>
-      </div>
+        <div className="flex flex-row justify-end w-20 py-3">
+          <span className="border border-white text-white rounded-lg py-1 px-3">
+            <LanguageSelector />
+          </span>
+        </div>
 
-      <div className="flex flex-row md:hidden justify-end mr-6 py-3 cursor-pointer" onClick={handleBurgerClick}>
-         <BurgerSvg />
-      </div>
+        {size.width < 1200 &&
+          <div className='menuWrap'>
+            <input type="checkbox" className='toggler' onChange={e => setShowMobileMenu(!showMobileMenu)} checked={showMobileMenu} id="hamburger-menu-checkbox" aria-label='hamburger menü' />
+            <div className='hamburger'><div>
+            </div>
+            </div>
+          </div>}
 
-      <div className="flex md:hidden">
+
+
+      </header>
+      {size.width < 1200 &&
         <MobileMenu bg={bgColor} show={showMobileMenu}>
-          <Navigation lang={props.lang} navigation={props.navigation}/>
+          <Navigation lang={props.lang} navigation={props.navigation} />
         </MobileMenu>
-      </div>
-    </header>
+      }
+    </>
+
   );
 }
 
@@ -73,17 +89,17 @@ export function MenuLink(props) {
 }
 
 function BurgerSvg() {
-   return (
-     <div className="flex items-center">
-         <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-            <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
-            <g id="SVGRepo_iconCarrier">
-               <path d="M4 18L20 18" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"></path>
-               <path d="M4 12L20 12" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"></path>
-               <path d="M4 6L20 6" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"></path>
-            </g>
-         </svg>
-     </div>
-   );
+  return (
+    <div className="flex items-center">
+      <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+        <g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M4 18L20 18" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"></path>
+          <path d="M4 12L20 12" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"></path>
+          <path d="M4 6L20 6" stroke="#ffffff" strokeWidth="2" strokeLinecap="round"></path>
+        </g>
+      </svg>
+    </div>
+  );
 }
