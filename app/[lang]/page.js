@@ -3,7 +3,7 @@ import { dictionary } from '../../dictionary'
 
 export default async function Page({ params: { lang } }) {
   const t = await dictionary(lang)
-  
+
   return (
     <div className="flex flex-col items-center">
       <div className="flex flex-col w-full h-[34rem] text-white items-center bg-indigo-600 bg-cover	bg-[url('/front.svg')]">
@@ -11,7 +11,7 @@ export default async function Page({ params: { lang } }) {
           {t['hello-message']}
         </span>
         <span className="w-4/5 lg:w-[40rem] text-center text-lg tracking-wider leading-8">
-          Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin odio nec consequat feugiat. 
+          Vivamus a malesuada libero. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sollicitudin odio nec consequat feugiat.
           Maecenas pulvinar porttitor mauris ut sollicitudin. Etiam sit amet mi sed quam sagittis eleifend.
         </span>
         <div className="pt-24">
@@ -20,9 +20,9 @@ export default async function Page({ params: { lang } }) {
         </div>
       </div>
 
-      <div className="flex flex-row items-center bing-bg rounded-2xl mt-24">
+      <div className="flex flex-col md:flex-row py-4 items-center bing-bg rounded-2xl mt-24">
         <div className="flex justify-center items-center w-[10rem] xl:w-[16rem]">
-          <div className="relative w-[8rem] h-[8rem] z-10"><Image src="/bing.png" alt="Bing" fill/></div>
+          <div className="relative w-[8rem] h-[8rem] z-10"><Image src="/bing.png" alt="Bing" fill /></div>
         </div>
         <div className="flex flex-col pl-6 pr-8 py-20 w-[22rem] lg:w-[32rem] xl:w-[40rem]">
           <span className="text-2xl xl:text-4xl mb-8">Bemutatjuk az új Binget. Az AI-alapú másodpilóta a weben.</span>
@@ -34,21 +34,21 @@ export default async function Page({ params: { lang } }) {
       </div>
 
       <div className="flex flex-col lg:flex-row my-24">
-        <div className="flex flex-col pt-2 mb-8 lg:mb-0 w-[25rem] xl:w-[32rem]">
+        <div className="flex flex-col pt-2 mb-8 lg:mb-0 w-[20rem] xl:w-[32rem]">
           <span className="text-2xl xl:text-4xl">Érj el nagyobb teljesítményt</span>
           <span className="text-md xl:text-lg py-4 lg:py-16 lg:pr-6">A Microsoft Edge ugyanarra a technológiára épül, mint a Chrome, azonban további beépített funkciókkal rendelkezik – mint például az indítási rásegítés és az alvó lapok –, melyek a Windowszal legjobban való működésre optimalizált, világszínvonalú teljesítménnyel és sebességgel teszik jobbá a böngészési élményt.</span>
           <button className="p-3 w-[16rem] rounded-md bg-black text-white">További információk</button>
         </div>
-        <div className="flex justify-end w-[32rem] xl:w-[40rem]">
-          <div className="relative w-[35rem] h-[25rem]">
-            <Image src="/laptop.jpg" alt="Laptop" fill className="rounded-2xl"/>
+        <div className="flex justify-end w-[20rem] xl:w-[40rem]">
+          <div className="relative w-[20rem] h-[15rem]">
+            <Image src="/laptop.jpg" alt="Laptop" fill className="rounded-2xl" />
           </div>
         </div>
       </div>
 
-      <div className="flex flex-row items-center bg-stone-100 rounded-2xl mb-24">
+      <div className="flex flex-col md:flex-row py-4 items-center bg-stone-100 rounded-2xl mb-24">
         <div className="flex justify-center items-center w-[10rem] xl:w-[16rem]">
-          <div className="relative w-[8rem] h-[8rem]"><Image src="/secure-icon.png" alt="Secure" fill/></div>
+          <div className="relative w-[8rem] h-[8rem]"><Image src="/secure-icon.png" alt="Secure" fill /></div>
         </div>
         <div className="flex flex-col pl-6 pr-8 py-20 w-[22rem] lg:w-[32rem] xl:w-[40rem]">
           <span className="text-2xl xl:text-4xl mb-8">Maradj biztonságban online.</span>
