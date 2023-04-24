@@ -48,11 +48,9 @@ export default function Menubar(props) {
         </div>
       </div>
 
-      <div className="flex">
-        <MobileMenu bg={bgColor} show={showMobileMenu}>
-          <Navigation lang={props.lang} navigation={props.navigation} />
-        </MobileMenu>
-      </div>
+      <MobileMenu bg={bgColor} show={showMobileMenu}>
+        <Navigation lang={props.lang} navigation={props.navigation} />
+      </MobileMenu>
     </>
 
   );
