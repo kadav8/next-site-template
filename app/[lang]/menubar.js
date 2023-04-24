@@ -1,17 +1,15 @@
 'use client'
 
 import Link from "next/link";
-import { useEffect, useState } from 'react';
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from 'react';
+import '../../styles/css/header.css';
 import LanguageSelector from "./language-selector";
-import MobileMenu from "./mobile-menu"
-import useWindowSize from '../../utils/windowSize'
-import '../../styles/css/header.css'
+import MobileMenu from "./mobile-menu";
 
 export default function Menubar(props) {
   const pathname = usePathname();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
-  const size = useWindowSize();
 
   let bgColor = "text-gray-200 bg-gray-800";
   if (pathname === `/${props.lang}`) bgColor = "text-indigo-200 bg-indigo-600";
@@ -21,23 +19,20 @@ export default function Menubar(props) {
   }, [pathname]);
 
   useEffect(() => {
-    /* if (showMobileMenu) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = 'visible'; */
+    showMobileMenu
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'auto');
   }, [showMobileMenu]);
-
 
   return (
     <>
-      <header className={`flex text-xs items-center justify-center ${bgColor}`}>
+      <div className={`flex text-xs items-center justify-center ${bgColor}`}>
         <div className="flex flex-row w-full ml-6 md:ml-0 md:w-20 text-start text-white py-3 font-extrabold">
           Temply
         </div>
-        {size.width >= 1200 &&
-          <nav className="flex px-32">
-            <Navigation lang={props.lang} navigation={props.navigation} />
-          </nav>
-
-        }
+        <nav className="hidden md:flex px-32">
+          <Navigation lang={props.lang} navigation={props.navigation} />
+        </nav>
 
         <div className="flex flex-row justify-end w-20 py-3">
           <span className="border border-white text-white rounded-lg py-1 px-3">
@@ -45,22 +40,19 @@ export default function Menubar(props) {
           </span>
         </div>
 
-        {size.width < 1200 &&
-          <div className='menuWrap'>
-            <input type="checkbox" className='toggler' onChange={e => setShowMobileMenu(!showMobileMenu)} checked={showMobileMenu} id="hamburger-menu-checkbox" aria-label='hamburger menü' />
-            <div className='hamburger'><div>
-            </div>
-            </div>
-          </div>}
+        <div className='menu-wrap md:hidden'>
+          <input type="checkbox" className='toggler' onChange={e => setShowMobileMenu(!showMobileMenu)} checked={showMobileMenu} id="hamburger-menu-checkbox" aria-label='hamburger menü' />
+          <div className='hamburger'><div>
+          </div>
+          </div>
+        </div>
+      </div>
 
-
-
-      </header>
-      {size.width < 1200 &&
+      <div className="flex">
         <MobileMenu bg={bgColor} show={showMobileMenu}>
           <Navigation lang={props.lang} navigation={props.navigation} />
         </MobileMenu>
-      }
+      </div>
     </>
 
   );

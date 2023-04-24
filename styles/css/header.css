@@ -1,33 +1,29 @@
-.menuWrap {
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: flex-end;
-	z-index: 1;
+.menu-wrap {
+	@apply flex md:hidden relative items-center justify-end z-10;
 }
 
-.menuWrap .toggler:checked + .hamburger > div {
+.menu-wrap .toggler:checked + .hamburger > div {
 	transform: rotate(135deg);
 }
 
-.menuWrap .toggler:checked + .hamburger > div::before,
-.menuWrap .toggler:checked + .hamburger > div::after {
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after {
 	top: 0;
 	transform: rotate(90deg);
 }
 
-.menuWrap .toggler {
+.menu-wrap .toggler {
 	position: absolute;
 	top: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 20;
 	cursor: pointer;
 	width: 4rem;
 	height: 2rem;
 	opacity: 0;
 }
 
-.menuWrap .hamburger {
+.menu-wrap .hamburger {
 	top: 0;
 	right: 0;
 	z-index: 1;
