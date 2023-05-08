@@ -20,7 +20,7 @@ export default async function PostPage({ params }) {
       <div className="flex flex-col w-4/5 lg:w-[52rem] pt-24 text-gray-600">
         <h1 className="text-4xl font-serif mb-12">{post.title}</h1>
         <div className="blog-post">
-          <Content/>
+          <Content />
         </div>
       </div>
     </div>
