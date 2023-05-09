@@ -1,10 +1,4 @@
-import { dictionary } from '../../../dictionary'
-import Image from "next/image";
-
-
-export async function generateStaticParams() {
-  return [{ column: 'szorakozas' }, { column: 'film' }];
-}
+import { dictionary } from '../../../dictionary';
 
 export default async function ColumnContent(params) {
   const { column } = params;
