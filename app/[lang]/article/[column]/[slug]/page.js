@@ -6,8 +6,11 @@ export const metadata = {
 
 export async function generateStaticParams() {
     const articles = await listArticles();
+    console.log('articles: ', articles);
     return articles.map((article) => ({
+
         slug: article.slug,
+        column: 'fixrovat'
     }));
 }
 
@@ -29,7 +32,7 @@ export default async function ArticlePage({ params }) {
     const { slug } = params;
     return (
         <div className="flex justify-center">
-            {slug}
+            {slug} ez  a site
         </div >
     );
 }
