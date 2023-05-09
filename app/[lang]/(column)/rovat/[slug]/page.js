@@ -3,13 +3,13 @@ import ColumnContent from '../../content'
 export const dynamicParams = false;
 
 export async function generateStaticParams() {
-    return [{ lang: 'en', column: 'column' }];
+    return [{ lang: 'hu', column: 'rovat', slug: 'film' }];
 }
 
 export const metadata = {
-    title: 'Site Template - Column'
+    title: 'Site Template - Rovat'
 }
 
 export default async function ColumnPage({ params }) {
-    return <ColumnContent column={params.column} lang={params.lang} />
+    return <ColumnContent column={params.slug} lang={params.lang} />
 }

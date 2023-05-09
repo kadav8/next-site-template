@@ -8,9 +8,9 @@ export async function generateStaticParams() {
     const articles = await listArticles();
     console.log('articles: ', articles);
     return articles.map((article) => ({
-
-        slug: article.slug,
-        column: 'fixrovat'
+        article: 'article',
+        column: 'fixrovat',
+        slug: article.slug
     }));
 }
 
