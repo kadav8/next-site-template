@@ -1,5 +1,7 @@
 import { ComparisonOperatorExpression, Generated, Kysely, ReferenceExpression } from 'kysely';
 import { PlanetScaleDialect } from 'kysely-planetscale';
+import { cache } from 'react';
+import 'server-only';
 
 interface ArticleTable {
 	id: Generated<number>;
@@ -54,6 +56,12 @@ interface Database {
 	column: ColumnTable;
 }
 
+interface ArticleCondition {
+	key: ReferenceExpression<Database, 'article'>;
+	operator: ComparisonOperatorExpression;
+	value: any;
+}
+
 export const queryBuilder = new Kysely<Database>({
 	dialect: new PlanetScaleDialect({
 		url: process.env.DATABASE_URL,
@@ -61,8 +69,6 @@ export const queryBuilder = new Kysely<Database>({
 });
 
 // ARTICLES:
-
-export const dynamic = 'force-dynamic';
 
 export async function listArticles(): Promise<Article[]> {
 	return await execute(
@@ -88,13 +94,35 @@ export async function listColumns(): Promise<Column[]> {
 	return await execute(queryBuilder.selectFrom('column').select(['id', 'name', 'slug']));
 }
 
-interface ArticleCondition {
-	key: ReferenceExpression<Database, 'article'>;
-	operator: ComparisonOperatorExpression;
-	value: any;
-}
+export const preload = (conditions: ArticleCondition[]) => {
+	void getArticle(conditions);
+};
 
-export async function getArticle(conditions: ArticleCondition[]): Promise<Article> {
+export const getArticle = cache(async (conditions: ArticleCondition[]) => {
+	let query = queryBuilder
+		.selectFrom('article')
+		.innerJoin('column', 'column.id', 'article.columnId')
+		.selectAll()
+		.select([
+			'article.slug',
+			'article.columnId',
+			'article.title',
+			'article.content',
+			'article.coverAlt',
+			'article.lead',
+			'column.name as columnName',
+			'column.slug as columnSlug',
+		]);
+
+	conditions.forEach(condition => {
+		query = query.where(condition.key, condition.operator, condition.value);
+	});
+	const sql = query.compile();
+	console.log('query: ', sql.sql, ', params: ', sql.parameters);
+	return await executeTakeFirst(query);
+});
+
+export async function getArticleQ(conditions: ArticleCondition[]): Promise<Article> {
 	let query = queryBuilder
 		.selectFrom('article')
 		.innerJoin('column', 'column.id', 'article.columnId')

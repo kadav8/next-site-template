@@ -1,7 +1,5 @@
-import { getContent } from '@/services/articleContentService';
-import { Article, getArticle, listArticles } from '@/services/planetscale';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
+import ArticleLayout from '@/components/articleLayout';
+import { listArticles, preload } from '@/services/planetscale';
 
 export const metadata = {
 	title: 'Site Template - Articles',
@@ -9,7 +7,7 @@ export const metadata = {
 export const dynamicParams = true;
 export const dynamic = 'auto';
 
-export async function generateStaticParams() {
+/* export async function generateStaticParams() {
 	const articles = await listArticles();
 	const hu = articles.map(article => ({
 		lang: 'hu',
@@ -24,11 +22,11 @@ export async function generateStaticParams() {
 		}))
 	);
 	return concat;
-}
+} */
 
 export default async function ArticlePage({ params }) {
 	const { column, slug, lang } = params;
-	const article = await getArticle([{ key: 'article.slug', operator: '=', value: slug }]);
+	/* const article = await getArticle([{ key: 'article.slug', operator: '=', value: slug }]);
 	if (!article) notFound();
 	const articleContent = article.content;
 	return (
@@ -55,6 +53,15 @@ export default async function ArticlePage({ params }) {
 			) : (
 				'Loading..'
 			)}
-		</>
+		</> 
 	);
+*/
+	preload([{ key: 'article.slug', operator: '=', value: slug }]); // starting loading the user data now
+	/* const condition = await fetchCondition(); */
+	return true ? (
+		<>
+			{/* @ts-expect-error Server Component */}
+			<ArticleLayout slug={slug} lang={lang} />
+		</>
+	) : null;
 }
