@@ -1,5 +1,7 @@
-import ArticleLayout from '@/components/articleLayout';
-import { listArticles, preload } from '@/services/planetscale';
+import { getContent } from '@/services/articleContentService';
+import { getArticle, listArticles } from '@/services/planetscale';
+import Link from 'next/link';
+import notFound from './not-found';
 
 export const metadata = {
 	title: 'Site Template - Articles',
@@ -7,7 +9,6 @@ export const metadata = {
 
 export const dynamicParams = true;
 export const dynamic = 'auto';
-export const revalidate = 240;
 //export const runtime = 'edge';
 //export const preferredRegion = 'fra1';
 
@@ -29,9 +30,11 @@ export async function generateStaticParams() {
 }
 
 export default async function ArticlePage({ params }) {
-	const { column, slug, lang } = params;
-	/* const article = await getArticle([{ key: 'article.slug', operator: '=', value: slug }]);
+	const { lang, slug } = params;
+	const res = await fetch('https://next-site-template.vercel.app/api/articles/' + slug, { next: { revalidate: 1000 } });
+	const article = await res.json();
 	if (!article) notFound();
+
 	const articleContent = article.content;
 	return (
 		<>
@@ -59,13 +62,4 @@ export default async function ArticlePage({ params }) {
 			)}
 		</> 
 	);
-*/
-	preload([{ key: 'article.slug', operator: '=', value: slug }]); // starting loading the user data now
-	/* const condition = await fetchCondition(); */
-	return true ? (
-		<>
-			{/* @ts-expect-error Server Component */}
-			<ArticleLayout slug={slug} lang={lang} />
-		</>
-	) : null;
 }
