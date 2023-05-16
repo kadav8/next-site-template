@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 export const dynamicParams = true;
-export const dynamic = 'force-dynamic';
+export const dynamic = 'auto';
 export const revalidate = 240;
 //export const runtime = 'edge';
 //export const preferredRegion = 'fra1';
