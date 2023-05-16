@@ -12,7 +12,7 @@ export const dynamic = 'auto';
 //export const runtime = 'edge';
 //export const preferredRegion = 'fra1';
 
-export async function generateStaticParams() {
+/*export async function generateStaticParams() {
 	const articles = await listArticles();
 	const hu = articles.map(article => ({
 		lang: 'hu',
@@ -27,7 +27,7 @@ export async function generateStaticParams() {
 		}))
 	);
 	return concat;
-}
+}*/
 
 export default async function ArticlePage({ params }) {
 	const { lang, slug } = params;
