@@ -62,6 +62,8 @@ export const queryBuilder = new Kysely<Database>({
 
 // ARTICLES:
 
+export const dynamic = 'force-dynamic';
+
 export async function listArticles(): Promise<Article[]> {
 	return await execute(
 		queryBuilder
@@ -121,7 +123,7 @@ async function execute(query: any) {
 	try {
 		return await query.execute();
 	} catch (error: any) {
-		console.log('Sql execution failed', error);
+		console.log('Sql execution failed: ', error);
 		return 'Sql execution failed';
 	}
 }

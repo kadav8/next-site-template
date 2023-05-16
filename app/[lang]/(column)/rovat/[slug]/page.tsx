@@ -5,7 +5,6 @@ import ColumnContent from '../../content';
 
 export async function generateStaticParams() {
 	const columns = await listColumns();
-	console.log('columns: ', columns);
 	return columns.map(col => ({
 		lang: 'hu',
 		slug: col.slug,

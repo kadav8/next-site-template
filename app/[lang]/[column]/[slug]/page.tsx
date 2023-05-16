@@ -7,7 +7,7 @@ export const metadata = {
 	title: 'Site Template - Articles',
 };
 export const dynamicParams = true;
-
+export const dynamic = 'force-dynamic';
 export async function generateStaticParams() {
 	const articles = await listArticles();
 	const hu = articles.map(article => ({
@@ -31,25 +31,29 @@ export default async function ArticlePage({ params }) {
 	if (!article) notFound();
 	const articleContent = article.content;
 	return (
-		<div className='flex items-center flex-col'>
-			<article className='content'>
-				<div className='articleContainer'>
-					<div className='breadcrumb'>
-						<Link href={`/${lang}/${lang === 'hu' ? 'rovat' : 'column'}/${article.columnSlug}`}>
-							{article.columnName}
-						</Link>
-					</div>
-					<h1 className='articleTitle headingPrimary'>{article.title}</h1>
-					<p className='articleLead'>{article.lead}</p>
-					<div className='articleContent'>
-						{articleContent &&
-							articleContent.content &&
-							articleContent.content.map((cont: any, i: number) => {
-								return getContent(cont, i);
-							})}
-					</div>
+		<>
+			{articleContent && articleContent.content ? (
+				<div className='flex items-center flex-col'>
+					<article className='content'>
+						<div className='articleContainer'>
+							<div className='breadcrumb'>
+								<Link href={`/${lang}/${lang === 'hu' ? 'rovat' : 'column'}/${article.columnSlug}`}>
+									{article.columnName}
+								</Link>
+							</div>
+							<h1 className='articleTitle headingPrimary'>{article.title}</h1>
+							<p className='articleLead'>{article.lead}</p>
+							<div className='articleContent'>
+								{articleContent.content.map((cont: any, i: number) => {
+									return getContent(cont, i);
+								})}
+							</div>
+						</div>
+					</article>
 				</div>
-			</article>
-		</div>
+			) : (
+				'Loading..'
+			)}
+		</>
 	);
 }
