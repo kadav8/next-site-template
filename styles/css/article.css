@@ -1,0 +1,196 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;500;700&display=swap);
+
+.content {
+	flex: 1 0 auto;
+	font-family: 'RALEWAY', serif;
+}
+
+.centerText {
+	text-align: center;
+}
+
+.marginBottomBig {
+	margin-bottom: 5rem;
+}
+
+.marginBottomMedium {
+	margin-bottom: 2.5rem;
+}
+
+.marginBottomSmall {
+	margin-bottom: 1rem;
+}
+
+.hero {
+	position: relative;
+	overflow: hidden;
+}
+
+.headingPrimary {
+	letter-spacing: 0.125rem;
+	backface-visibility: hidden;
+	font-size: 1.5rem;
+	font-weight: 300;
+	font-family: 'RALEWAY', serif;
+	animation: scaleIn 1s forwards;
+	line-height: normal;
+}
+.headingPrimarySub {
+	display: block;
+	font-size: 1.25rem;
+	font-weight: 300;
+	letter-spacing: 0.125rem;
+	animation: scaleIn 1s forwards;
+}
+
+.headingSecondary {
+	display: inline-block;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-family: 'Lusitana', serif;
+	letter-spacing: 0.125rem;
+	animation: moveInBottom 1s forwards;
+}
+
+.heroImgBox {
+	height: 70vh;
+	display: flex;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+}
+
+.content {
+	@apply flex flex-col items-center gap-2;
+}
+
+.articleContainer {
+	background-color: #fff;
+	z-index: 2;
+	padding: 1.25rem;
+	overflow: hidden;
+	box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+	@apply rounded;
+	width: 100%;
+	padding: 1.25rem;
+}
+
+.articleHeroImgBox {
+	height: 50vh;
+}
+
+.articleTitle {
+	margin: 1.25rem 0 2.5rem 0;
+	font-weight: 700;
+	letter-spacing: 0.065rem;
+}
+
+.articleSubTitle {
+	font-size: 1.5rem;
+	font-weight: 400;
+	margin-top: 0.75rem;
+}
+
+.articleLead {
+	margin-bottom: 1.25rem;
+	font-weight: 700;
+	font-size: 1.115rem;
+}
+
+.articleContent {
+	@apply flex flex-col;
+	gap: 0.75rem;
+	font-size: 1rem;
+}
+
+.articleContent p,
+.articleContent ul,
+.articleContent h1,
+.articleContent h2,
+.articleImageContainer {
+	margin-block-start: 0;
+	margin-block-end: 0;
+	margin-inline-start: 0;
+	margin-inline-end: 0;
+}
+
+.articleParagraph {
+	font-size: 1rem;
+	text-align: justify;
+}
+
+.articleImageContainer {
+	position: relative;
+}
+
+.articleImageCaption {
+	@apply flex justify-center items-center;
+}
+
+.articleUList {
+	list-style: none;
+}
+
+.articleUList li {
+	padding-left: 0.5rem;
+}
+
+.articleUList li::marker {
+	content: '•';
+	color: #4b5552;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.blockQuote {
+	border-left: 0.25rem solid #bbd4ce;
+	padding-left: 0.875rem;
+	font-size: 1.25rem;
+	border-radius: 1px;
+}
+
+.link {
+	background-color: #ddeae7;
+}
+
+.link:hover {
+	background-color: #bbd4ce;
+}
+
+/*ABOVE 1200px (For smaller desktops)*/
+@media only screen and (min-width: 75em) {
+	.articleContainer {
+		width: 50%;
+		padding: 2.5rem;
+		//margin: -6.25rem 0 6.25rem 0;
+	}
+
+	.articleTitle {
+		margin: 2.5rem 0 2.5rem 0;
+	}
+
+	.articleLead {
+		margin-bottom: 2.5rem;
+	}
+
+	.articleHeroImgBox {
+		height: 70vh;
+	}
+
+	.headingPrimary {
+		font-size: 3.2rem;
+		letter-spacing: 0.2rem;
+	}
+	.headingSecondary {
+		display: inline-block;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		font-weight: 400;
+		letter-spacing: 0.12rem;
+		animation: moveInBottom 1s forwards;
+	}
+}

@@ -2,7 +2,7 @@ import '../../styles/globals.css'
 import Header from './header';
 import Footer from './footer';
 
-export const dynamicParams = false;
+//export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return [{ lang: 'hu' }, { lang: 'en' }];

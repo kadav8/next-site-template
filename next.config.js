@@ -20,6 +20,14 @@ const nextConfig = {
       },
     ]
   },
+  /* async rewrites() {
+    return [
+      {
+        source: '/:lang/:column/:slug*',
+        destination: '/:lang/article/:column/:slug*',
+      },
+    ]
+  }, */
 }
 
 module.exports = withContentlayer(nextConfig)
