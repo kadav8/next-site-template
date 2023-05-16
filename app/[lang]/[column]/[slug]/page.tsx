@@ -7,7 +7,7 @@ export const metadata = {
 export const dynamicParams = true;
 export const dynamic = 'auto';
 
-/* export async function generateStaticParams() {
+export async function generateStaticParams() {
 	const articles = await listArticles();
 	const hu = articles.map(article => ({
 		lang: 'hu',
@@ -22,7 +22,7 @@ export const dynamic = 'auto';
 		}))
 	);
 	return concat;
-} */
+}
 
 export default async function ArticlePage({ params }) {
 	const { column, slug, lang } = params;
