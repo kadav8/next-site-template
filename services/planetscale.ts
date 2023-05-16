@@ -1,7 +1,6 @@
 import { ComparisonOperatorExpression, Generated, Kysely, ReferenceExpression } from 'kysely';
 import { PlanetScaleDialect } from 'kysely-planetscale';
 import { cache } from 'react';
-import 'server-only';
 
 interface ArticleTable {
 	id: Generated<number>;

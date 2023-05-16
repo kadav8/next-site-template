@@ -4,8 +4,12 @@ import { listArticles, preload } from '@/services/planetscale';
 export const metadata = {
 	title: 'Site Template - Articles',
 };
+
 export const dynamicParams = true;
-export const dynamic = 'auto';
+export const dynamic = 'force-dynamic';
+export const revalidate = 240;
+export const runtime = 'edge';
+export const preferredRegion = 'fra1';
 
 export async function generateStaticParams() {
 	const articles = await listArticles();
