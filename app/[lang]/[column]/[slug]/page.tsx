@@ -7,7 +7,8 @@ export const metadata = {
 	title: 'Site Template - Articles',
 };
 export const dynamicParams = true;
-export const dynamic = 'force-dynamic';
+export const dynamic = 'auto';
+
 export async function generateStaticParams() {
 	const articles = await listArticles();
 	const hu = articles.map(article => ({
