@@ -92,7 +92,7 @@ export async function listColumns(): Promise<Column[]> {
 	return await execute(queryBuilder.selectFrom('column').select(['id', 'name', 'slug']));
 }
 
-export async function getArticle(conditions: ArticleCondition[]) {
+export async function getArticle(conditions: ArticleCondition[]): Promise<Article> {
 	let query = queryBuilder
 		.selectFrom('article')
 		.innerJoin('column', 'column.id', 'article.columnId')
@@ -113,7 +113,7 @@ export async function getArticle(conditions: ArticleCondition[]) {
 	const sql = query.compile();
 	console.log('query: ', sql.sql, ', params: ', sql.parameters);
 	return await executeTakeFirst(query);
-};
+}
 
 export async function getArticleQ(conditions: ArticleCondition[]): Promise<Article> {
 	let query = queryBuilder
