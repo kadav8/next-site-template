@@ -96,7 +96,6 @@ export async function getArticle(conditions: ArticleCondition[]): Promise<Articl
 	let query = queryBuilder
 		.selectFrom('article')
 		.innerJoin('column', 'column.id', 'article.columnId')
-		.selectAll()
 		.select([
 			'article.slug',
 			'article.columnId',
