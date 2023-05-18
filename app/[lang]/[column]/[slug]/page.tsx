@@ -7,12 +7,11 @@ export const metadata = {
 	title: 'Site Template - Articles',
 };
 
+export const revalidate = 'force-cache';
+export const dynamic = 'force-static';
 export const dynamicParams = true;
-export const dynamic = 'auto';
-//export const runtime = 'edge';
-//export const preferredRegion = 'fra1';
 
-/*export async function generateStaticParams() {
+export async function generateStaticParams() {
 	const articles = await listArticles();
 	const hu = articles.map(article => ({
 		lang: 'hu',
@@ -27,14 +26,12 @@ export const dynamic = 'auto';
 		}))
 	);
 	return concat;
-}*/
+}
 
 export default async function ArticlePage({ params }) {
 	const { lang, slug } = params;
-	const res = await fetch('https://next-site-template.vercel.app/api/articles/' + slug, { next: { revalidate: 1000 } });
-	const article = await res.json();
+	const article = await getArticle([{ key: 'article.slug', operator: '=', value: slug }]);
 	if (!article) notFound();
-
 	const articleContent = article.content;
 	return (
 		<>
@@ -60,6 +57,6 @@ export default async function ArticlePage({ params }) {
 			) : (
 				'Loading..'
 			)}
-		</> 
+		</>
 	);
 }
