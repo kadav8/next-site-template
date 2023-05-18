@@ -30,7 +30,9 @@ export async function generateStaticParams() {
 
 export default async function ArticlePage({ params }) {
 	const { lang, slug } = params;
-	const article = await getArticle([{ key: 'article.slug', operator: '=', value: slug }]);
+	//const article = await getArticle([{ key: 'article.slug', operator: '=', value: slug }]);
+	const res = await fetch('https://next-site-template.vercel.app/api/articles/' + slug, { next: { revalidate: 1000 } });
+	const article = await res.json();
 	if (!article) notFound();
 	const articleContent = article.content;
 	return (
