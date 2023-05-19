@@ -15,7 +15,7 @@ export const metadata = {
 
 export default async function ArticlePage({ params }) {
 	const { lang, slug } = params;
-	const res = await fetch(API_BASE_URL + '/articles/' + slug, { next: { revalidate: 1, tags: ['articles'] }, headers: { "Api-Key": PUBLIC_API_KEY } });
+	const res = await fetch(API_BASE_URL + '/articles/' + slug, { next: { revalidate: 43200, tags: ['articles'] }, headers: { "Api-Key": PUBLIC_API_KEY } });
 	const article = await res.json();
 	if (!article) notFound();
 	const articleContent = article.content;
