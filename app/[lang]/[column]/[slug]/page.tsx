@@ -2,7 +2,7 @@ import { getContent } from '@/services/articleContentService';
 import Link from 'next/link';
 import notFound from './not-found';
 
-const API_BASE_URL = process.env.PUBLIC_API_KEY || '';
+const API_BASE_URL = process.env.API_BASE_URL || '';
 const PUBLIC_API_KEY = process.env.PUBLIC_API_KEY || '';
 
 export const revalidate = 'force-cache';
