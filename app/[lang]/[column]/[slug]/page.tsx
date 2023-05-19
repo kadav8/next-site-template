@@ -1,7 +1,8 @@
 import { getContent } from '@/services/articleContentService';
-import { getArticle, listArticles } from '@/services/planetscale';
 import Link from 'next/link';
 import notFound from './not-found';
+
+const PUBLIC_API_KEY = process.env.PUBLIC_API_KEY || '';
 
 export const metadata = {
 	title: 'Site Template - Articles',
@@ -11,27 +12,9 @@ export const revalidate = 'force-cache';
 export const dynamic = 'force-static';
 export const dynamicParams = true;
 
-export async function generateStaticParams() {
-	const articles = await listArticles();
-	const hu = articles.map(article => ({
-		lang: 'hu',
-		column: article.columnSlug,
-		slug: article.slug,
-	}));
-	const concat = hu.concat(
-		articles.map(article => ({
-			lang: 'en',
-			column: article.columnSlug,
-			slug: article.slug,
-		}))
-	);
-	return concat;
-}
-
 export default async function ArticlePage({ params }) {
 	const { lang, slug } = params;
-	//const article = await getArticle([{ key: 'article.slug', operator: '=', value: slug }]);
-	const res = await fetch('https://next-site-template.vercel.app/api/articles/' + slug, { next: { revalidate: 1000 } });
+	const res = await fetch('https://codeside-cms-eight.vercel.app/api/public/articles/' + slug, { next: { revalidate: 43200 }, headers: { "Api-Key": PUBLIC_API_KEY } });
 	const article = await res.json();
 	if (!article) notFound();
 	const articleContent = article.content;
